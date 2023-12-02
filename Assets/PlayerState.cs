@@ -23,12 +23,14 @@ public class PlayerState
     public virtual void Enter()
     {
         player.animator.SetBool(animBoolName, true);
-        rb = player.rb2D;
+        rb = player.rb;
     }
 
     public virtual void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");
+
+        player.animator.SetFloat("yVelocity", rb.velocity.y);
     }
 
     public virtual void Exit()
