@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpHeight: 12
 --- !u!4 &1578165952
 Transform:
   m_ObjectHideFlags: 0
