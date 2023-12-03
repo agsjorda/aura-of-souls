@@ -87,8 +87,6 @@ public class Player : MonoBehaviour
             stateMachine.ChangeState(dashState);
         }
 
-        FlipController();
-
     }
 
     public void SetVelocity(float xVelocity, float yVelocity)
@@ -120,26 +118,5 @@ public class Player : MonoBehaviour
             Flip();
     }
 
-    public bool isGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
-    }
-
-    public void Flip()
-    {
-        facingDir *= -1;
-        facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
-    }
-
-    public void FlipController()
-    {
-        if (rb.velocity.x > 0 && !facingRight)
-            Flip();
-        else if (rb.velocity.x < 0 && facingRight)
-            Flip();
-    }
+    
 }
