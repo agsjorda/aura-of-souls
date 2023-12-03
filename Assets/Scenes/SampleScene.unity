@@ -349,12 +349,12 @@ MonoBehaviour:
   moveSpeed: 5
   jumpHeight: 12
   dashCooldown: 2
-  dashSpeed: 25
+  dashSpeed: 12
   dashDuration: 0.3
   groundCheck: {fileID: 338545307}
   groundCheckDistance: 0.3
   wallCheck: {fileID: 478724031}
-  wallCheckDistance: 0.4
+  wallCheckDistance: 0.55
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
