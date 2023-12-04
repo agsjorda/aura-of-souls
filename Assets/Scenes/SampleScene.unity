@@ -479,7 +479,7 @@ MonoBehaviour:
   attackMovement:
   - {x: 2, y: 1}
   - {x: 1, y: 2}
-  - {x: 4, y: 10}
+  - {x: 16, y: 4}
   moveSpeed: 5
   jumpHeight: 15
   dashCooldown: 2
