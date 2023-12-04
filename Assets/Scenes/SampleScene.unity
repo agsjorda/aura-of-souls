@@ -477,9 +477,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackMovement:
-  - {x: 3, y: 1.5}
+  - {x: 2, y: 1}
   - {x: 1, y: 2}
-  - {x: 20, y: 4}
+  - {x: 4, y: 10}
   moveSpeed: 5
   jumpHeight: 15
   dashCooldown: 2
