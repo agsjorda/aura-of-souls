@@ -21,10 +21,26 @@ public class SkeletonBattleState : EnemyState
     public override void Update()
     {
         base.Update();
+        if (enemy.isPlayerDetected())
+        {
+            stateTimer = enemy.battleTime;
+            if (enemy.isPlayerDetected().distance < enemy.attackDistance)
+            {
+                if (CanAttack())
+                    stateMachine.ChangeState(enemy.attackState);
+            }
 
-        if (player.position.x > enemy.transform.position.x) 
+        }
+        else
+        {
+            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 10)
+                stateMachine.ChangeState(enemy.idleState);
+        }
+
+
+        if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
-        else if (player.position.x <  enemy.transform.position.x)
+        else if (player.position.x < enemy.transform.position.x)
             moveDir = -1;
 
         enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.position.y);
@@ -35,4 +51,14 @@ public class SkeletonBattleState : EnemyState
         base.Exit();
     }
 
+    private bool CanAttack()
+    {
+        if (Time.time >= enemy.lastTimeAttacked + enemy.attackCooldown)
+        {
+            enemy.lastTimeAttacked = Time.time;
+            return true;
+        }
+
+        return false;
+    }
 }

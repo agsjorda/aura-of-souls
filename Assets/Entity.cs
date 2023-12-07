@@ -41,7 +41,7 @@ public class Entity : MonoBehaviour
         rb.velocity = new Vector2(xVelocity, yVelocity);
         FlipController(xVelocity);
     }
-    public void ZeroVelocity() => rb.velocity = Vector2.zero;
+    public void SetZeroVelocity() => rb.velocity = Vector2.zero;
     #endregion
 
     #region Collision

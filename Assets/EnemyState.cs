@@ -18,11 +18,13 @@ public class EnemyState
         this.enemyBase = _enemyBase;
         this.stateMachine = _stateMachine;
         this.animBoolName = _animBoolName;
+
     }
 
     public virtual void Update()
     {
         stateTimer -= Time.deltaTime;
+        Debug.Log(stateTimer + "inside enemyState");
     }
 
     public virtual void Enter()
@@ -35,5 +37,10 @@ public class EnemyState
     public virtual void Exit()
     {
         enemyBase.animator.SetBool(animBoolName, false);
+    }
+
+    public virtual void AnimationFinishTrigger()
+    {
+        triggerCalled = true;
     }
 }
