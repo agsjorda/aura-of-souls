@@ -24,7 +24,6 @@ public class SkeletonIdleState : SkeletonGroundedState
     public override void Update()
     {
         base.Update();
-        Debug.Log("inside idle State");
         if (stateTimer < 0)
             stateMachine.ChangeState(enemy.moveState);
     }

@@ -29,12 +29,6 @@ public class Enemy : Entity
         base.Update();
         stateMachine.currentState.Update();
 
-
-        if (isPlayerDetected())
-        {
-            Debug.Log(isPlayerDetected().collider.gameObject.name + "There you are");
-        }
-
     }
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 

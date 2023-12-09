@@ -21,7 +21,6 @@ public class SkeletonMoveState : SkeletonGroundedState
     public override void Update()
     {
         base.Update();
-        Debug.Log("inside move State");
         enemy.SetVelocity(enemy.moveSpeed * enemy.facingDir, rb.velocity.y);
 
         if (enemy.isWallDetected() || !enemy.isGroundDetected())

@@ -24,7 +24,6 @@ public class EnemyState
     public virtual void Update()
     {
         stateTimer -= Time.deltaTime;
-        Debug.Log(stateTimer + "inside enemyState");
     }
 
     public virtual void Enter()
